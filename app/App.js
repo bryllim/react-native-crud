@@ -1,10 +1,12 @@
 import React from 'react';
 import { 
   NavigationContainer, 
+  DefaultTheme as NavigationDefaultTheme
 } from '@react-navigation/native';
 
 import { 
   Provider as PaperProvider, 
+  DefaultTheme as PaperDefaultTheme,
 } from 'react-native-paper';
 
 import RootStackScreen from './screens/RootStackScreen';
@@ -12,7 +14,11 @@ import RootStackScreen from './screens/RootStackScreen';
 const App = () => {
 
   const theme = {
+    ...NavigationDefaultTheme,
+    ...PaperDefaultTheme,
     colors: {
+      ...NavigationDefaultTheme.colors,
+      ...PaperDefaultTheme.colors,
       background: '#ffffff',
       text: '#333333'
     }
